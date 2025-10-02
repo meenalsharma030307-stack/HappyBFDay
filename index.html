@@ -78,7 +78,7 @@
         <div class="qr-section">
             <h3>Scan this QR code for a special message:</h3>
             <div class="qr-code">
-                <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://happy-bf-day.vercel.app#message" alt="QR Code" style="width: 180px; height: 180px;">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://happy-bf-day.vercel.app/special.html" alt="QR Code" style="width: 180px; height: 180px;">
             </div>
             <p><em>Scan this QR code to see a special romantic message! 💕</em></p>
         </div>
@@ -89,7 +89,7 @@
             <!-- Image Carousel -->
             <div style="margin-bottom: 40px;">
                 <div id="imageCarousel" style="position: relative; max-width: 500px; margin: 0 auto; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
-                    <img id="carouselImage" src="https://happy-bf-day.vercel.app/Images/uploads/WhatsApp%20Image%202025-10-02%20at%203.31.03%20PM.jpeg" alt="Our memories" style="width: 100%; height: 400px; object-fit: cover; display: block;">
+                    <img id="carouselImage" src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=500&h=400&fit=crop" alt="Our memories" style="width: 100%; height: 400px; object-fit: cover; display: block;">
                     <div style="position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,0.7); color: white; padding: 10px 20px; border-radius: 20px; font-size: 14px;">
                         <span id="imageCounter">1 of 6</span>
                     </div>
@@ -114,16 +114,27 @@
             if (window.location.hash === '#message') {
                 document.getElementById('message').style.display = 'block';
                 document.querySelector('.qr-section').style.display = 'none';
+                // Scroll to message section
+                document.getElementById('message').scrollIntoView({ behavior: 'smooth' });
             }
+            
+            // Handle QR code scanning - prevent loop
+            window.addEventListener('hashchange', function() {
+                if (window.location.hash === '#message') {
+                    document.getElementById('message').style.display = 'block';
+                    document.querySelector('.qr-section').style.display = 'none';
+                    document.getElementById('message').scrollIntoView({ behavior: 'smooth' });
+                }
+            });
             
             // Image carousel functionality
             const images = [
-                'https://happy-bf-day.vercel.app/Images/uploads/WhatsApp%20Image%202025-10-02%20at%203.31.03%20PM.jpeg',
-                'https://happy-bf-day.vercel.app/Images/uploads/WhatsApp%20Image%202025-10-02%20at%203.31.03%20PM%20(1).jpeg',
-                'https://happy-bf-day.vercel.app/Images/uploads/WhatsApp%20Image%202025-10-02%20at%203.31.03%20PM%20(2).jpeg',
-                'https://happy-bf-day.vercel.app/Images/uploads/WhatsApp%20Image%202025-10-02%20at%203.31.03%20PM%20(3).jpeg',
-                'https://happy-bf-day.vercel.app/Images/uploads/WhatsApp%20Image%202025-10-02%20at%203.31.03%20PM%20(4).jpeg',
-                'https://happy-bf-day.vercel.app/Images/uploads/WhatsApp%20Image%202025-10-02%20at%203.31.03%20PM%20(5).jpeg'
+                'https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=500&h=400&fit=crop',
+                'https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=500&h=400&fit=crop',
+                'https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=500&h=400&fit=crop',
+                'https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=500&h=400&fit=crop',
+                'https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=500&h=400&fit=crop',
+                'https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=500&h=400&fit=crop'
             ];
             
             const messages = [
