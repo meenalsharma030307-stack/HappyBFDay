@@ -78,10 +78,44 @@
         <div class="qr-section">
             <h3>Scan this QR code for a special message:</h3>
             <div class="qr-code">
-                <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://happy-bf-day.vercel.app/love.html" alt="QR Code" style="width: 180px; height: 180px;">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://happy-bf-day.vercel.app#message" alt="QR Code" style="width: 180px; height: 180px;">
             </div>
             <p><em>Scan this QR code to see a special romantic message! 💕</em></p>
         </div>
+        
+        <div id="message" style="display: none; margin-top: 50px; padding: 40px; background: #fff5f5; border-radius: 20px; border: 3px solid #ff6b6b;">
+            <h2 style="color: #ff6b6b; font-size: 2.5em; margin-bottom: 30px;">My Dearest Love 💖</h2>
+            
+            <div style="font-size: 1.2em; line-height: 1.8; color: #333; text-align: left;">
+                <p style="margin-bottom: 20px; padding: 15px; background: #fff; border-radius: 10px; border-left: 5px solid #ff6b6b;">
+                    You are the sunshine that brightens my darkest days and the moonlight that guides me through the night. 🌙
+                </p>
+                
+                <p style="margin-bottom: 20px; padding: 15px; background: #fff; border-radius: 10px; border-left: 5px solid #ff6b6b;">
+                    Every moment with you feels like a beautiful dream that I never want to wake up from. Your smile is my favorite thing in the world, and your laugh is the melody that plays in my heart. 🎵
+                </p>
+                
+                <p style="margin-bottom: 20px; padding: 15px; background: #fff; border-radius: 10px; border-left: 5px solid #ff6b6b;">
+                    You make me believe in magic, in forever, and in the kind of love that stories are written about. With you, I've found my home, my safe place, and my greatest adventure all rolled into one. 🏠✨
+                </p>
+                
+                <p style="margin-bottom: 20px; padding: 15px; background: #fff; border-radius: 10px; border-left: 5px solid #ff6b6b;">
+                    Thank you for being my best friend, my partner in crime, and the love of my life. I fall in love with you more and more each day. 💕
+                </p>
+            </div>
+            
+            <div style="background: linear-gradient(45deg, #ff6b6b, #ff8e8e); color: white; padding: 20px; border-radius: 15px; margin: 30px 0; font-size: 1.2em; font-weight: bold;">
+                You are my everything, my always, and my forever. I love you more than words can express! 💕
+            </div>
+        </div>
+        
+        <script>
+            // Check if URL has #message hash
+            if (window.location.hash === '#message') {
+                document.getElementById('message').style.display = 'block';
+                document.querySelector('.qr-section').style.display = 'none';
+            }
+        </script>
     </div>
 </body>
 </html>
