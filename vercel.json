@@ -1,17 +1,15 @@
 {
+  "version": 2,
   "builds": [
     {
-      "src": "HappyBFDay/HappyBFDay.csproj",
-      "use": "@vercel/dotnet"
+      "src": "index.html",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/"
+      "dest": "/index.html"
     }
-  ],
-  "env": {
-    "ASPNETCORE_ENVIRONMENT": "Production"
-  }
+  ]
 }
