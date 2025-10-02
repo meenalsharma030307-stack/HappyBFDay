@@ -78,14 +78,14 @@
         <div class="qr-section">
             <h3>Click here for a special message:</h3>
             <div style="margin: 30px 0;">
-                <a href="https://happy-bf-day.vercel.app/romantic-test-2025.html" target="_blank" style="display: inline-block; background: linear-gradient(45deg, #ff6b6b, #ff8e8e); color: white; padding: 20px 40px; border-radius: 50px; text-decoration: none; font-size: 1.3em; font-weight: bold; box-shadow: 0 10px 30px rgba(255,107,107,0.3); transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='scale(1.1)'; this.style.boxShadow='0 15px 40px rgba(255,107,107,0.5)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 10px 30px rgba(255,107,107,0.3)'">
-                    💕 Test Romantic Page 💕
-                </a>
+                <button onclick="showRomanticMessage()" style="display: inline-block; background: linear-gradient(45deg, #ff6b6b, #ff8e8e); color: white; padding: 20px 40px; border-radius: 50px; border: none; font-size: 1.3em; font-weight: bold; box-shadow: 0 10px 30px rgba(255,107,107,0.3); transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='scale(1.1)'; this.style.boxShadow='0 15px 40px rgba(255,107,107,0.5)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 10px 30px rgba(255,107,107,0.3)'">
+                    💕 Show Romantic Message 💕
+                </button>
             </div>
             <p><em>Click the button above to see your special romantic message! 💕</em></p>
         </div>
         
-        <div id="message" style="display: none; margin-top: 50px; padding: 40px; background: #fff5f5; border-radius: 20px; border: 3px solid #ff6b6b;">
+        <div id="romanticMessage" style="display: none; margin-top: 50px; padding: 40px; background: #fff5f5; border-radius: 20px; border: 3px solid #ff6b6b;">
             <h2 style="color: #ff6b6b; font-size: 2.5em; margin-bottom: 30px; text-align: center;">My Dearest Love 💖</h2>
             
             <!-- Image Carousel -->
@@ -172,8 +172,17 @@
                 showImage(currentImageIndex);
             }
             
-            // Auto-advance carousel every 5 seconds
-            setInterval(nextImage, 5000);
+        // Auto-advance carousel every 5 seconds
+        setInterval(nextImage, 5000);
+        
+        // Function to show romantic message
+        function showRomanticMessage() {
+            const messageDiv = document.getElementById('romanticMessage');
+            if (messageDiv) {
+                messageDiv.style.display = 'block';
+                messageDiv.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
         </script>
     </div>
 </body>
