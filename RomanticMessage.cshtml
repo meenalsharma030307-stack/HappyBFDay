@@ -1,0 +1,674 @@
+@model HappyBFDay.Models.RomanticMessageViewModel
+@{
+    ViewData["Title"] = "💕 Romantic Surprise 💕";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+        <div class="romantic-surprise-bg" style="background: #add8e6 !important;">
+        <div class="container-fluid">
+            <div class="row justify-content-center align-items-center min-vh-100">
+                <div class="col-lg-10">
+                    <div class="romantic-surprise-card">
+                        <!-- Corner Hearts -->
+                        <div class="corner-heart">💖</div>
+                        
+                        <!-- Floating Hearts Animation -->
+                        <div class="floating-hearts">
+                            <i class="fas fa-heart heart-1"></i>
+                            <i class="fas fa-heart heart-2"></i>
+                            <i class="fas fa-heart heart-3"></i>
+                            <i class="fas fa-heart heart-4"></i>
+                            <i class="fas fa-heart heart-5"></i>
+                        </div>
+
+                        <!-- Main Message -->
+                        <div class="text-center mb-5">
+                            <h1 class="surprise-title" style="color: #000000 !important;">
+                                <i class="fas fa-heart text-danger"></i>
+                                Happy Boyfriend's Day Babe
+                                <i class="fas fa-heart text-danger"></i>
+                            </h1>
+                            <div class="romantic-message" style="color: #000000 !important;">
+                                @Html.Raw(Model.Message.Replace("\n", "<br>"))
+                            </div>
+                        </div>
+
+                        <!-- Beautiful Hearts Decoration -->
+                        <div class="hearts-decoration text-center mb-5">
+                            <div class="heart-row">
+                                <i class="fas fa-heart heart-deco"></i>
+                                <i class="fas fa-heart heart-deco"></i>
+                                <i class="fas fa-heart heart-deco"></i>
+                            </div>
+                            <p class="love-quote">
+                                "You are my today and all of my tomorrows" 💕
+                            </p>
+                            <div class="heart-row">
+                                <i class="fas fa-heart heart-deco"></i>
+                                <i class="fas fa-heart heart-deco"></i>
+                                <i class="fas fa-heart heart-deco"></i>
+                            </div>
+                        </div>
+
+
+                        <!-- Photo Carousel -->
+                        <div class="photo-carousel-section text-center mb-5">
+                            <h3 class="gallery-title">
+                                <i class="fas fa-heart"></i> Our Beautiful Memories
+                            </h3>
+                            
+                            <div id="memoriesCarousel" class="carousel slide" data-bs-ride="carousel">
+                                <div class="carousel-indicators">
+                                    <button type="button" data-bs-target="#memoriesCarousel" data-bs-slide-to="0" class="active"></button>
+                                    <button type="button" data-bs-target="#memoriesCarousel" data-bs-slide-to="1"></button>
+                                    <button type="button" data-bs-target="#memoriesCarousel" data-bs-slide-to="2"></button>
+                                    <button type="button" data-bs-target="#memoriesCarousel" data-bs-slide-to="3"></button>
+                                    <button type="button" data-bs-target="#memoriesCarousel" data-bs-slide-to="4"></button>
+                                    <button type="button" data-bs-target="#memoriesCarousel" data-bs-slide-to="5"></button>
+                                </div>
+                                
+                                <div class="carousel-inner">
+                                    <!-- Memory 1 -->
+                                    <div class="carousel-item active">
+                                        <div class="carousel-content">
+                                            <img src="~/Images/uploads/WhatsApp Image 2025-10-02 at 3.31.03 PM.jpeg" 
+                                                 alt="Our Beautiful Memory" 
+                                                 class="carousel-image">
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Memory 2 -->
+                                    <div class="carousel-item">
+                                        <div class="carousel-content">
+                                            <img src="~/Images/uploads/WhatsApp Image 2025-10-02 at 3.31.03 PM (1).jpeg" 
+                                                 alt="Our Beautiful Memory" 
+                                                 class="carousel-image">
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Memory 3 -->
+                                    <div class="carousel-item">
+                                        <div class="carousel-content">
+                                            <img src="~/Images/uploads/WhatsApp Image 2025-10-02 at 3.31.03 PM (2).jpeg" 
+                                                 alt="Our Beautiful Memory" 
+                                                 class="carousel-image">
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Memory 4 -->
+                                    <div class="carousel-item">
+                                        <div class="carousel-content">
+                                            <img src="~/Images/uploads/WhatsApp Image 2025-10-02 at 3.31.03 PM (3).jpeg" 
+                                                 alt="Our Beautiful Memory" 
+                                                 class="carousel-image">
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Memory 5 -->
+                                    <div class="carousel-item">
+                                        <div class="carousel-content">
+                                            <img src="~/Images/uploads/WhatsApp Image 2025-10-02 at 3.31.03 PM (4).jpeg" 
+                                                 alt="Our Beautiful Memory" 
+                                                 class="carousel-image">
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Memory 6 -->
+                                    <div class="carousel-item">
+                                        <div class="carousel-content">
+                                            <img src="~/Images/uploads/WhatsApp Image 2025-10-02 at 3.31.03 PM (5).jpeg" 
+                                                 alt="Our Beautiful Memory" 
+                                                 class="carousel-image">
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <button class="carousel-control-prev" type="button" data-bs-target="#memoriesCarousel" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon"></span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#memoriesCarousel" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon"></span>
+                                </button>
+                            </div>
+                            
+                            <!-- Dynamic Message Below Carousel -->
+                            <div class="text-center mt-4">
+                                <div id="dynamicMessage" class="memory-message-below">
+                                    <h4 class="memory-message-text">I love you 💕</h4>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Love Animation -->
+                        <div class="text-center">
+                            <div class="love-animation">
+                                <i class="fas fa-heart pulse-heart"></i>
+                                <span class="love-text">Made with Love</span>
+                                <i class="fas fa-heart pulse-heart"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Photo Modal -->
+    <div class="modal fade" id="photoModal" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content romantic-modal">
+                <div class="modal-body text-center">
+                    <img id="modalPhoto" src="" alt="Our Memory" class="img-fluid rounded">
+                    <button type="button" class="btn-close romantic-close" data-bs-dismiss="modal"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+
+
+        function openPhotoModal(img) {
+            document.getElementById('modalPhoto').src = img.src;
+            new bootstrap.Modal(document.getElementById('photoModal')).show();
+        }
+        
+        // Messages for each slide
+        const messages = [
+            "I love you 💕",
+            "You are my safe place 💙", 
+            "I'm grateful to have you 💜",
+            "I hope we are always like this, happy and together 💖",
+            "You make my heart smile every day 💕",
+            "Every moment with you is precious 💖"
+        ];
+        
+        // Update message when carousel slide changes
+        document.addEventListener('DOMContentLoaded', function() {
+            const carousel = document.getElementById('memoriesCarousel');
+            const messageElement = document.getElementById('dynamicMessage').querySelector('.memory-message-text');
+            
+            carousel.addEventListener('slide.bs.carousel', function (event) {
+                const activeIndex = event.to;
+                messageElement.textContent = messages[activeIndex];
+            });
+        });
+
+        // Add sparkle effect on click
+        document.addEventListener('click', function(e) {
+            createSparkle(e.clientX, e.clientY);
+        });
+
+        function createSparkle(x, y) {
+            const sparkle = document.createElement('div');
+            sparkle.className = 'sparkle';
+            sparkle.style.left = x + 'px';
+            sparkle.style.top = y + 'px';
+            document.body.appendChild(sparkle);
+
+            setTimeout(() => {
+                sparkle.remove();
+            }, 1000);
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .romantic-surprise-bg {
+            background: #add8e6; /* Changed to light blue */
+            min-height: 100vh;
+            position: relative;
+        }
+
+
+        .romantic-surprise-card {
+            background: rgba(173, 216, 230, 0.95);
+            border-radius: 30px;
+            padding: 3rem;
+            box-shadow: 0 30px 60px rgba(173, 216, 230, 0.3);
+            backdrop-filter: blur(15px);
+            border: 3px solid #add8e6;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        @@media (max-width: 768px) {
+            .romantic-surprise-card {
+                padding: 1.5rem;
+                margin: 0 10px;
+            }
+            
+            .surprise-title {
+                font-size: 2.5rem !important;
+            }
+            
+            .romantic-message {
+                font-size: 1.4rem !important;
+            }
+        }
+
+        .romantic-surprise-card::before {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            right: -3px;
+            bottom: -3px;
+            background: #9370db;
+            border-radius: 33px;
+            z-index: -1;
+        }
+
+        .romantic-surprise-card::after {
+            content: '💕';
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            font-size: 1.5rem;
+            animation: heartFloat 2s ease-in-out infinite;
+        }
+
+        .romantic-surprise-card .corner-heart {
+            content: '💖';
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 1.5rem;
+            animation: heartFloat 2s ease-in-out infinite 0.5s;
+        }
+
+        .surprise-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5rem;
+            color: #000000 !important;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+
+        .romantic-message {
+            font-size: 1.8rem;
+            color: #000000 !important;
+            font-weight: 400;
+            line-height: 1.6;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .floating-hearts {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .floating-hearts i {
+            position: absolute;
+            color: rgba(147, 112, 219, 0.6);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .heart-1 { left: 10%; animation-delay: 0s; font-size: 1.5rem; }
+        .heart-2 { left: 20%; animation-delay: 1s; font-size: 1rem; }
+        .heart-3 { left: 70%; animation-delay: 2s; font-size: 1.2rem; }
+        .heart-4 { left: 80%; animation-delay: 3s; font-size: 0.8rem; }
+        .heart-5 { left: 90%; animation-delay: 4s; font-size: 1.3rem; }
+
+        @@keyframes float {
+            0%, 100% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10%, 90% { opacity: 1; }
+            50% { transform: translateY(-10px) rotate(180deg); }
+        }
+
+        .hearts-decoration {
+            margin: 3rem 0;
+        }
+
+        .heart-row {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 1rem 0;
+        }
+
+        .heart-deco {
+            color: #9370db;
+            font-size: 2rem;
+            animation: heartFloat 3s ease-in-out infinite;
+        }
+
+        .heart-deco:nth-child(1) { animation-delay: 0s; }
+        .heart-deco:nth-child(2) { animation-delay: 0.5s; }
+        .heart-deco:nth-child(3) { animation-delay: 1s; }
+
+        .love-quote {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.8rem;
+            color: #000000;
+            font-weight: 600;
+            font-style: italic;
+            margin: 2rem 0;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        @@keyframes heartFloat {
+            0%, 100% { transform: translateY(0px) scale(1); }
+            50% { transform: translateY(-10px) scale(1.1); }
+        }
+
+        .music-section {
+            background: linear-gradient(135deg, rgba(147, 112, 219, 0.1), rgba(65, 105, 225, 0.1));
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .music-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            color: #000000;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .song-description {
+            color: #000000;
+            font-size: 1.2rem;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn-play {
+            background: linear-gradient(45deg, #9370db, #8a2be2);
+            border: none;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin: 0.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(147, 112, 219, 0.4);
+        }
+
+        .btn-play:hover {
+            background: linear-gradient(45deg, #8a2be2, #4169e1);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(147, 112, 219, 0.6);
+            color: white;
+        }
+
+        .btn-link-music {
+            background: linear-gradient(45deg, #4169e1, #6495ed);
+            border: none;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin: 0.5rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(65, 105, 225, 0.4);
+        }
+
+        .btn-link-music:hover {
+            background: linear-gradient(45deg, #6495ed, #87ceeb);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(65, 105, 225, 0.6);
+            color: white;
+            text-decoration: none;
+        }
+
+        .love-animation {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .pulse-heart {
+            color: #9370db;
+            font-size: 2rem;
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+
+        .love-text {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.8rem;
+            color: #000000;
+            font-weight: 600;
+        }
+
+        @@keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        @@keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .romantic-modal {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            border: none;
+        }
+
+        .romantic-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(147, 112, 219, 0.8);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+        }
+
+        .sparkle {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background: radial-gradient(circle, #9370db, transparent);
+            border-radius: 50%;
+            pointer-events: none;
+            animation: sparkleAnimation 1s ease-out forwards;
+            z-index: 9999;
+        }
+
+        @@keyframes sparkleAnimation {
+            0% {
+                transform: scale(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1) rotate(180deg);
+                opacity: 0;
+            }
+        }
+
+
+        /* Photo Carousel Styles */
+        .photo-carousel-section {
+            margin: 3rem 0;
+        }
+
+        .gallery-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            color: #000000;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        #memoriesCarousel {
+            max-width: 100%;
+            margin: 0 auto;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(147, 112, 219, 0.3);
+            border: 3px solid #9370db;
+            padding: 3px;
+            min-height: 400px;
+        }
+        
+        @@media (max-width: 768px) {
+            #memoriesCarousel {
+                max-width: 100%;
+                min-height: 300px;
+                margin: 0 10px;
+            }
+        }
+
+        .carousel-inner {
+            border-radius: 17px;
+            overflow: hidden;
+        }
+
+        .carousel-content {
+            position: relative;
+            text-align: center;
+        }
+
+        .carousel-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 17px;
+            background-color: #f8f9fa;
+        }
+        
+        @@media (max-width: 768px) {
+            .carousel-image {
+                height: 300px;
+            }
+        }
+
+        .carousel-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(106, 90, 205, 0.9));
+            padding: 2rem 1rem 1rem;
+            border-radius: 0 0 17px 17px;
+        }
+
+        .memory-message {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+            color: white;
+            font-weight: 600;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            margin: 0;
+            animation: messageGlow 2s ease-in-out infinite alternate;
+        }
+        
+        .memory-message-below {
+            background: linear-gradient(135deg, rgba(173, 216, 230, 0.9), rgba(135, 206, 235, 0.9));
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            box-shadow: 0 10px 25px rgba(173, 216, 230, 0.3);
+            border: 2px solid #add8e6;
+        }
+        
+        .memory-message-text {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+            color: #000000;
+            font-weight: 600;
+            margin: 0;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .carousel-indicators {
+            bottom: -50px;
+        }
+
+        .carousel-indicators button {
+            background-color: #9370db;
+            border-radius: 50%;
+            width: 12px;
+            height: 12px;
+            margin: 0 5px;
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-indicators button.active {
+            background-color: #4169e1;
+            transform: scale(1.2);
+        }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 50px;
+            height: 50px;
+            background: rgba(147, 112, 219, 0.8);
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+            border: 2px solid white;
+        }
+
+        .carousel-control-prev {
+            left: -25px;
+        }
+
+        .carousel-control-next {
+            right: -25px;
+        }
+
+        .carousel-control-prev:hover,
+        .carousel-control-next:hover {
+            background: rgba(65, 105, 225, 0.9);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        @@keyframes messageGlow {
+            from { text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+            to { text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.3), 0 0 15px rgba(106, 90, 205, 0.5); }
+        }
+
+        @@media (max-width: 768px) {
+            .surprise-title {
+                font-size: 2.5rem;
+            }
+            
+            .romantic-message {
+                font-size: 1.4rem;
+            }
+            
+            .romantic-surprise-card {
+                padding: 1.5rem;
+                margin: 1rem;
+            }
+        }
+    </style>
+</body>
+</html>

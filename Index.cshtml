@@ -1,0 +1,274 @@
+﻿@model HappyBFDay.Models.QRCodeViewModel
+@{
+    ViewData["Title"] = "💕 Happy Boyfriend's Day 💕";
+}
+
+        <div class="container-fluid romantic-bg" style="background: #add8e6 !important;">
+    <div class="row justify-content-center">
+        <div class="col-lg-6">  
+            <div class="romantic-card">
+                <div class="text-center mb-4">
+                    <h1 class="romantic-title" style="color: #000000 !important;">💕 Happy Boyfriend's Day My Baby 💕</h1>
+                    <p class="romantic-subtitle" style="color: #000000 !important;">Your special QR code with love and music</p>
+                </div>
+
+                @if (Model.Result != null && Model.Result.Success)
+                {
+                    <div class="text-center mb-4">
+                        <div class="qr-code-container">
+                            <img src="data:image/png;base64,@Model.Result.QRCodeImage" 
+                                 alt="Romantic QR Code" 
+                                 class="qr-code-image" 
+                                 style="max-width: 400px; height: auto;" />
+                            <div class="qr-code-overlay">
+                                <i class="fas fa-heart heart-icon"></i>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <p class="romantic-instruction">
+                                <i class="fas fa-mobile-alt"></i> 
+                                Scan this QR code to see your romantic surprise!
+                            </p>
+                                    <div class="message-preview">
+                                        <h4 class="preview-title">
+                                            <i class="fas fa-heart"></i> Message:
+                                        </h4>
+                                        <p class="preview-text">"Happy Boyfriend's Day my baby 💕"</p>
+                                        <h4 class="preview-title">
+                                            <i class="fas fa-music"></i> Song:
+                                        </h4>
+                                        <p class="preview-text">"I Wanna Be Yours" by Arctic Monkeys</p>
+                                        <div class="mt-3">
+                                            <h4 class="preview-title">
+                                                <i class="fas fa-link"></i> Direct Link:
+                                            </h4>
+                                            <p class="preview-text">
+                                                <a href="http://192.168.29.112:5000/Home/RomanticMessage" 
+                                                   target="_blank" 
+                                                   style="color: #000000; text-decoration: underline;">
+                                                    http://192.168.29.112:5000/Home/RomanticMessage
+                                                </a>
+                                            </p>
+                                        </div>
+                                    </div>
+                        </div>
+                    </div>
+                }
+
+                <div class="text-center">
+                    <div class="love-animation">
+                        <i class="fas fa-heart pulse-heart"></i>
+                        <span class="love-text">Made with Love</span>
+                        <i class="fas fa-heart pulse-heart"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .romantic-bg {
+        background: #add8e6; /* Changed to light blue */
+        min-height: 100vh;
+        padding: 2rem 0;
+    }
+
+    .romantic-card {
+        background: rgba(173, 216, 230, 0.95);
+        border-radius: 20px;
+        padding: 2rem;
+        box-shadow: 0 20px 40px rgba(173, 216, 230, 0.3);
+        backdrop-filter: blur(10px);
+        border: 3px solid #add8e6;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    @@media (max-width: 768px) {
+        .romantic-card {
+            padding: 1rem;
+            margin: 0 10px;
+        }
+        
+        .romantic-title {
+            font-size: 2rem !important;
+        }
+        
+        .romantic-subtitle {
+            font-size: 1rem !important;
+        }
+        
+        .qr-code-image {
+            max-width: 250px;
+            height: auto;
+        }
+    }
+
+    .romantic-card::before {
+        content: '';
+        position: absolute;
+        top: -3px;
+        left: -3px;
+        right: -3px;
+        bottom: -3px;
+        background: #9370db;
+        border-radius: 23px;
+        z-index: -1;
+    }
+
+    .romantic-title {
+        color: #000000 !important;
+        font-family: 'Georgia', serif;
+        font-weight: bold;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        margin-bottom: 0.5rem;
+    }
+
+    .romantic-subtitle {
+        color: #000000 !important;
+        font-style: italic;
+        font-size: 1.1rem;
+    }
+
+    .romantic-label {
+        color: #d63384;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+    }
+
+    .romantic-input {
+        border: 2px solid #f8d7da;
+        border-radius: 10px;
+        padding: 0.75rem;
+        transition: all 0.3s ease;
+    }
+
+    .romantic-input:focus {
+        border-color: #ff69b4;
+        box-shadow: 0 0 0 0.2rem rgba(255, 105, 180, 0.25);
+        outline: none;
+    }
+
+    .btn-romantic {
+        background: linear-gradient(45deg, #ff69b4, #ff1493);
+        border: none;
+        color: white;
+        padding: 1rem 2rem;
+        border-radius: 25px;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(255, 105, 180, 0.4);
+    }
+
+    .btn-romantic:hover {
+        background: linear-gradient(45deg, #ff1493, #dc143c);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(255, 105, 180, 0.6);
+        color: white;
+    }
+
+    .qr-code-container {
+        position: relative;
+        display: inline-block;
+        padding: 1rem;
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    .qr-code-image {
+        max-width: 300px;
+        height: auto;
+        border-radius: 10px;
+    }
+
+    .qr-code-overlay {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+    }
+
+    .heart-icon {
+        color: rgba(255, 105, 180, 0.8);
+        font-size: 2rem;
+        animation: heartbeat 1.5s ease-in-out infinite;
+    }
+
+    .romantic-instruction {
+        color: #000000;
+        font-weight: 500;
+        font-size: 1.1rem;
+    }
+
+    .romantic-alert {
+        border-radius: 10px;
+        border: none;
+        font-weight: 500;
+    }
+
+    @@keyframes heartbeat {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.1); }
+        100% { transform: scale(1); }
+    }
+
+    .fas {
+        margin-right: 0.5rem;
+    }
+
+    .message-preview {
+        background: linear-gradient(135deg, rgba(255, 105, 180, 0.1), rgba(186, 85, 211, 0.1));
+        border-radius: 15px;
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+        border: 2px solid rgba(255, 105, 180, 0.2);
+    }
+
+    .preview-title {
+        color: #000000;
+        font-family: 'Dancing Script', cursive;
+        font-size: 1.3rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+    }
+
+    .preview-text {
+        color: #000000;
+        font-size: 1.1rem;
+        font-weight: 500;
+        margin-bottom: 1rem;
+        font-style: italic;
+    }
+
+    .love-animation {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        margin: 2rem 0;
+    }
+
+    .pulse-heart {
+        color: #ff1493;
+        font-size: 2rem;
+        animation: pulse 1.5s ease-in-out infinite;
+    }
+
+    .love-text {
+        font-family: 'Dancing Script', cursive;
+        font-size: 1.8rem;
+        color: #000000;
+        font-weight: 600;
+    }
+
+    @@keyframes pulse {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.2); }
+    }
+
+</style>
